@@ -1,0 +1,39 @@
+
+
+<!-- ngIf : condicional if , si cumple se renderiza thenblock sino else block-->
+<div *ngIf="nombreUsuario; then thenBlock; else elseBlock">
+</div>
+
+<ng-template #thenBlock>
+  <p>Hola {{nombreUsuario}}</p>
+</ng-template>
+
+<ng-template #elseBlock>
+  <p>Hola Desconocido</p>
+</ng-template>
+
+
+<!--
+Binding: técnica que permite la sincronización entre el controlador o componente y la vista (interfaz de usuario). 
+-->
+
+<button (click)="mostrarAlerta()">Mostrar Alerta</button>
+
+<br>
+<p *ngIf="nombreEnLaVista; then thenBlockNombre; else elseBlockNombre">{{nombreEnLaVista}}</p>
+<ng-template #thenBlockNombre>{{nombreEnLaVista}}</ng-template>
+<ng-template #elseBlockNombre>No se puede ver el nombre</ng-template>
+<br>
+<button (click)="imprimirNombreEnLaVista()">Imprimir nombre de la vista</button>
+<br>
+
+<!--Ejemplo formgroup-->
+
+<div class="formularioRegistro" [formGroup]="formRegistrarse"> 
+  <h3>Formulario registro</h3>
+  <input type="text" placeholder="Nombre" formControlName="nombre"><br>
+  <input type="text" placeholder="Apellido" formControlName="apellido"><br>
+  <input type="number" placeholder="Edad" formControlName="edad"><br>
+  <input type="email" placeholder="Correo Electronico" formControlName="correo"><br>
+  <button (click)="registrarse()">Registrarse</button>
+</div>
