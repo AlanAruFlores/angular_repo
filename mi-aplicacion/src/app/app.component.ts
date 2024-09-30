@@ -1,3 +1,4 @@
+import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
 import { FormGroup,FormBuilder, FormControl, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
@@ -18,7 +19,7 @@ export class AppComponent {
   router: Router;
 
 
-  constructor(formBuilder:FormBuilder, router:Router){
+  constructor(formBuilder:FormBuilder, router:Router, private httpClient:HttpClient){
     this.formRegistrarse = formBuilder.group({
       nombre: new FormControl('',Validators.required),
       apellido: new FormControl('',Validators.required),
@@ -44,6 +45,18 @@ export class AppComponent {
       let apellido:string = this.formRegistrarse.get("apellido").value;
       let correo:string = this.formRegistrarse.get("correo").value;
       let edad:number = this.formRegistrarse.get("edad").value;
+
+      /*Cuando tengamos alguna api creada, para registrar el usuario la haremos de la siguiente forma: */
+      this.httpClient.post("http://localhost:3000/api/crear-usuario",{
+          'nombre': nombre,
+          'apellido': apellido,
+          'correo': correo,
+          'edad': edad
+      }).subscribe(value=>{
+        console.log(JSON.stringify(value)); //Imprimo la respuesta
+      });
+      
+
 
       alert(`Registrado: \n
         nombre: ${nombre} \n

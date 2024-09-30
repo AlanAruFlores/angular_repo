@@ -3,9 +3,13 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NuevaViewComponentComponent } from './nueva-view-component/nueva-view-component.component';
-import { NuevaViewComponentDosComponent } from './nueva-view-component-dos/nueva-view-component-dos.component'; // Importa esto
+import { NuevaViewComponentDosComponent } from './nueva-view-component-dos/nueva-view-component-dos.component';
+import { HttpClientModule } from '@angular/common/http';
+
+/*Aca vamos a gestionar los modulos necesarios para la inyeccion de dependencias.
+Si hacemos uso de un modulo no definido aca, entonces falla la aplicacion */
 @NgModule({
   declarations: [
     AppComponent,
@@ -15,7 +19,9 @@ import { NuevaViewComponentDosComponent } from './nueva-view-component-dos/nueva
   imports: [
     BrowserModule,
     AppRoutingModule,
-    ReactiveFormsModule 
+    FormsModule,
+    ReactiveFormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
