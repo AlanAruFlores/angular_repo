@@ -37,3 +37,24 @@ Binding: técnica que permite la sincronización entre el controlador o componen
   <input type="email" placeholder="Correo Electronico" formControlName="correo"><br>
   <button (click)="registrarse()">Registrarse</button>
 </div>
+
+
+<!--Redireccion directa: no pasa por el controlador la redireccion de un componente a otro-->
+<a routerLink="nuevaViewUno" routerLinkActive="active">Renderizar NuevaViewComponente</a>
+<br>
+<a routerLink="nuevaViewDos" routerLinkActive="active">Renderizar NuevaViewComponente DOS</a>
+<br>
+<!--Redireccion indirecta: pasa por el controlador la redireccion-->
+<button (click)="renderizarIndirectamenteNuevaViewComponente()">Renderizar Indirectamente NuevaViewComponente</button>
+<br>
+<button (click)="renderizarIndirectamenteNuevaViewComponenteDOS()">Renderizar Indirectamente NuevaViewComponente DOS</button>
+<br>
+<!--Ensambola aqui el componente redireccionada por medio de este tag-->
+<router-outlet></router-outlet>
+
+<!--Cual es la diferencia entre directo e indirecto? La diferencia es que en el ruteo indirecto puedo ejecutar
+logica antes de que suceda la redireccion , algo que no puede hacer la redireccion directa-->
+
+
+<!--Si queremos redireccionar a otra  vista, la tecnica es usar un componente general que incluya
+un menu de navegacion con un router-outlet que contendra el componente de la vista a redireccionar-->
