@@ -79,3 +79,10 @@ f.readdir("./", (error, archivos)=>{
         console.log(archivo);
     })
 });
+
+f.readFile("archivoTexto.txt", "utf-8", (error, data)=>{
+    console.log(data);
+});
+
+//const texto = f.readFileSync("archivoTexto.txt", "utf-8");
+//console.log(texto);
