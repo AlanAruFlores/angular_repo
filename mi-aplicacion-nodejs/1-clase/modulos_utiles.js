@@ -66,3 +66,16 @@ if(argv.entorno == "prueba"){
     console.log("Entorno de prueba");
 }
 
+/*
+    File System: permite trabajar con el sistema de archivos
+*/
+
+const f = require("fs");
+
+console.log("file system module");
+
+f.readdir("./", (error, archivos)=>{
+    archivos.forEach(archivo => {
+        console.log(archivo);
+    })
+});
