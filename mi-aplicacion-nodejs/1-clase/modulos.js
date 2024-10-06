@@ -22,3 +22,9 @@ console.log(hostname);
 const miModulo = require("./mis_modulos"); // importo mi modulo
 const resultado  = miModulo.sumar(10,10);
 console.log(resultado);
+
+
+const {saludar, despedida} = require("./mis_modulos2");
+saludar();
+despedida();
+
