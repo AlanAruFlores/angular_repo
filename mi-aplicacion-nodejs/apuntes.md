@@ -49,8 +49,52 @@ Son esenciales para que el cliente sepa que paso con la solicitud en el servidor
 Ubicacion virtual del S.O por la cual se puede acceder a una aplicacion o proceso especifico que se este
 ejecutando en ese puerto.
 
+## URL (Uniform Resource Locator)
+Direccion de un recurso en la web
+
+## Subdominio
+Permite a los sitios web organizar y separar la infromacion para distintos propositos
+  ejemplo : www , blog, 
+  www.ejemplo.com
+
+## Dominio
+Referencia unica a un sitio web
+
+## Routing
+Es un concepto clave para el desarrollo de servidores en cualquier plataforma. Consiste en manejar las peticiones
+del cliente en base a ciertos criterios: metodo y ruta
+    .Metodo: De esta manera el servidor sabra que operacion realizar (GET,POST,PUT,DELETE)
+    .Ruta: El servidor sabra el recurso especifico
+Una ruta es la combinacion entre metodo y ruta.
+
+
+# Express 
+Como vimos en el ejemplo de routing usando NodeJS:
+````js
+//Si estamos en al pagina inicial
+    if(url === "/"){
+        res.statusCode = 200;
+        res.end("Bienvenido a mi primer servidor y API con Node");
+    }
+
+    //Si la url es /cursos,  devuelvo los datos
+    else if(url === "/cursos"){
+        res.statusCode = 200;
+        res.end(JSON.stringify(infoCursos)); // mando los datos en un JSON
+    }
+
+    else if(url === "/cursos/programacion"){
+        res.statusCode = 200;
+        res.end(JSON.stringify(infoCursos.programacion));
+    }
+
+    res.statusCode = 404;
+    res.end("No se halla dicho recurso");
+````
+La aplicacion puede ser muy compleja , entonces se hace uso del framework de Express en lugar de escribir
+la parte del servidor con nodejs.
+
 
 # EXTRA
-
 ## REST Client 
 Este plugin permite testear 
