@@ -9,6 +9,7 @@
   "author": "Alan",
   "license": "ISC",
   "dependencies": {
+    "express": "^4.21.1",
     "file-system": "^2.2.2",
     "lodash": "^4.17.21",
     "yargs": "^17.7.2"

@@ -99,6 +99,27 @@ Herramienta que reinicia la aplicacion de NodeJS cuando detecta algun cambio
 "npm install -g nodemon" --> instalamos nodemon
 "nodemon <aplicacion>" --> crear proyecto
 
+# Express
+El framework web mas popular de Node.js y nos ayuda a desarrollar aplicaciones
+nodejs mas rapidas
+## Caracteristicas
+.Routing --> es mucho mas facil
+.Enfocado en alto rendimiento
+.Nos permite desarrollar aplicaciones de node  mas rapidamente
+
+# CRUD
+Operaciones basicas que se pueden realizar con la informacion almacenada
+Create - Read- Update- Delete
+
+# API
+Es una interfaz que permite la comunicacion entre 2 o mas programas, es decir es
+un servicio para otro software.
+Son usados para implementarse en sistemas
+
+El formato de intercambio es JSON.
+
+"npm install express" --> instala express
+
 # EXTRA
 ## REST Client 
 Este plugin permite testear 
