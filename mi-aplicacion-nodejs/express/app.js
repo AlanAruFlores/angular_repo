@@ -3,6 +3,12 @@ const app = express(); // crea la aplicacion de express
 
 const {personasData} = require("./personas_data.js"); //Obtengo la lista
 
+//Routers --> Permiten definir una path base que tiene en comun un grupo de actions
+const personasRouter = express.Router();
+app.use("/api/personas", personasRouter);
+
+
+
 
 
 //Routing en Express
@@ -12,7 +18,9 @@ app.get('/', (req,res)=>{
     res.send("Servidor en Express"); // envia 
 });
 
-app.get("/api/personas", (req,res)=>{
+
+//personaRouter controla estas actions
+personasRouter.get("/", (req,res)=>{
     let orden = req.query.ordenamiento; // recibe en la parte final del path un parametro "..?ordenamiento=value"
     console.log(`ORDEN: ${orden}`);
     
@@ -22,7 +30,7 @@ app.get("/api/personas", (req,res)=>{
     res.send(JSON.stringify(personasData));
 });
 
-app.get("/api/personas/:id", (req,res)=>{
+personasRouter.get("/:id", (req,res)=>{
     //Obtengo el parametro de la url
     const idParametro =  req.params.id;
 
@@ -36,7 +44,7 @@ app.get("/api/personas/:id", (req,res)=>{
     res.status(401).send("No se encontro la persona");
 });
 
-app.get("/api/personas/:nombre/:apellido", (req,res)=>{
+personasRouter.get("/:nombre/:apellido", (req,res)=>{
     const nombreParam = req.params.nombre;
     const apellidoParam = req.params.apellido;
 
