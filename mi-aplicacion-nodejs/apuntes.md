@@ -94,6 +94,10 @@ Como vimos en el ejemplo de routing usando NodeJS:
 La aplicacion puede ser muy compleja , entonces se hace uso del framework de Express en lugar de escribir
 la parte del servidor con nodejs.
 
+# Nodemon
+Herramienta que reinicia la aplicacion de NodeJS cuando detecta algun cambio
+"npm install -g nodemon" --> instalamos nodemon
+"nodemon <aplicacion>" --> crear proyecto
 
 # EXTRA
 ## REST Client 
